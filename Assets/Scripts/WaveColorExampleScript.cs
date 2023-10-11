@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.Rendering.PostProcessing;
+//using UnityEngine.Rendering.PostProcessing;
 
+/*
 public class WaveColorExampleScript : MonoBehaviour
 {
     // Reference to the URP Volume component on your camera
@@ -112,3 +113,4 @@ public class WaveColorExampleScript : MonoBehaviour
        // cubeMaterial.SetColor("_EmissionColor", originalEmissionColor);
     }
 }
+*/

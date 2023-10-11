@@ -1,6 +1,6 @@
-using UnityEngine;
+ using UnityEngine;
 using System.Collections;
-using UnityEngine.Rendering.PostProcessing;
+/* using UnityEngine.Rendering.PostProcessing;
 
 public class MovingWaveColorCurve : MonoBehaviour
 {
@@ -90,4 +90,4 @@ public class MovingWaveColorCurve : MonoBehaviour
             }
         }
     }
-
+*/

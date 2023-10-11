@@ -1,13 +1,13 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.Rendering.PostProcessing;
-
+//using UnityEngine.Rendering.PostProcessing;
+/*
 public class SpectrumWaveColorCurve : MonoBehaviour
 {
     // Reference to the URP Volume component on your camera
-    public PostProcessVolume postProcessVolume;
+ //   public PostProcessVolume postProcessVolume;
     public MeshRenderer cubeRenderer;
-    private ColorGrading colorGrading;
+   // private ColorGrading colorGrading;
     private AnimationCurve waveCurve;
     private float waveSpeed = 0.02f;
     private float waveAmplitude = 0.9f;
@@ -17,17 +17,17 @@ public class SpectrumWaveColorCurve : MonoBehaviour
     public float hueShiftMultiplier = 360f; // Adjust this value to control the range of hue shift
     public float audioAmplitudeScale = 1.0f;
 
-    private void Start()
+     private void Start()
     {
-        // Check if the postProcessingVolume is assigned
+         Check if the postProcessingVolume is assigned
         if (postProcessVolume == null)
         {
             Debug.LogError("Post Processing Volume is not assigned!");
             return;
         }
 
-        // Try to get the ColorCurves effect from the post-processing profile
-        if (postProcessVolume.profile.TryGetSettings(out ColorGrading cg))
+         Try to get the ColorCurves effect from the post-processing profile
+       if (postProcessVolume.profile.TryGetSettings(out ColorGrading cg))
         {
             colorGrading = cg;
         }
@@ -106,3 +106,4 @@ public class SpectrumWaveColorCurve : MonoBehaviour
         }
     }
 }
+    */
