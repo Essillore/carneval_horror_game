@@ -2,13 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class KeyBoolPairs
+{
+    public int keyNumber;
+    public bool found;
+}
+
+
 public class KeyLocation : MonoBehaviour
 {
     public bool key1Found = false;
-    public bool key2Found = false;
+    public bool key2Found = false; 
     public bool key3Found = false;
 
+    //keyclass
+    //location
     public int keyID;
+
+    public Dictionary<int, keys> keyDict = new Dictionary<int, keys>(); 
 
     public GameObject keyObject;
 
@@ -30,21 +42,19 @@ public class KeyLocation : MonoBehaviour
 
         Instantiate(keyObject, transform.position, transform.rotation);
        // keyObject.keyID = 1;
+  
     }
 
-    public void KeyFound (int numberOfKey)
+    public void KeyFound (keys numberofKey)
     {
-        if (numberOfKey == 1)
+
+        if(keyDict.ContainsKey(numberofKey.ID))
         {
-            key1Found = true;
+            keyDict[numberofKey.ID].found = true;
         }
-        if (numberOfKey == 2)
+        else
         {
-            key2Found = true;
-        }
-        if (numberOfKey == 3)
-        {
-            key3Found = true;
+            keyDict.Add(numberofKey.ID, numberofKey);
         }
     }
 }
