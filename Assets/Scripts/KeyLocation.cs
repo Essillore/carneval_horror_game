@@ -148,16 +148,19 @@ public class KeyLocation : MonoBehaviour
             // Set the canvas image to visible when a key is found
             if (numberofKey.ID == 0)
             {
+                keyFound[0] = true;
                 canvasController.isVisible = true;
                 canvasController.ToggleImageVisibility();
             }
             if (numberofKey.ID == 1)
             {
+                keyFound[1] = true;
                 waterCanvasController.isVisible = true;
                 waterCanvasController.ToggleImageVisibility();
             }
             if (numberofKey.ID == 2)
             {
+                keyFound[2] = true;
                 sunCanvasController.isVisible = true;
                 sunCanvasController.ToggleImageVisibility();          
             }

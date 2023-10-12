@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class PlayerKeyReturn : MonoBehaviour
 {
     public KeyLocation keyHolder;
-  //  public KeyBoolPairs keyPairs;
+    //  public KeyBoolPairs keyPairs;
     // Start is called before the first frame update
+
+    public GameObject endingPortal;
     void Start()
     {
         if(keyHolder.keyFound[0] == true)
@@ -36,7 +38,8 @@ public class PlayerKeyReturn : MonoBehaviour
         {
             if (keyHolder.keyFound[0] == true && keyHolder.keyFound[1] == true && keyHolder.keyFound[2] == true)
             {
-                Instantiate(gameObject, transform.position, transform.rotation);
+                Vector3 endingPortalPosition = new Vector3(0f, 0f, 63f);
+                Instantiate(endingPortal, endingPortalPosition, transform.rotation);
             }
             if (keyHolder.keyFound[0] == true)
             {
