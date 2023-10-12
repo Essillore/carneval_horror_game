@@ -11,7 +11,7 @@ public class Keys : MonoBehaviour
 
     void Start()
     {
-        ID = 1;
+
     }
 
     // Update is called once per frame
@@ -24,7 +24,9 @@ public class Keys : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            KeyLocation.KeyFound(ID);
+            KeyLocation keyLocation = GameObject.FindObjectOfType<KeyLocation>();
+            keyLocation.KeyFound(this);
+            //KeyLocation.KeyFound(ID);
         }
     }
 
