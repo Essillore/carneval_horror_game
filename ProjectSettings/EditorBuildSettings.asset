@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/menuscene.unity
     guid: 9f7e3d40f680d5d4eb43d02a38ef94eb
   - enabled: 1
-    path: Assets/Scenes/MapScene.unity
-    guid: 1acbf2b2e8c0cce419b0a01ec8fecff8
+    path: Assets/Scenes/mapscenekopiotoimii2.unity
+    guid: 3a658fa948cc61848aa715a44911e5c1
+  - enabled: 1
+    path: Assets/Scenes/credits.unity
+    guid: 049f902b937dd3e4d8ff06f7bd12fac2
   m_configObjects: {}
