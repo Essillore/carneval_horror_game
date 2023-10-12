@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerKeyReturn : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerKeyReturn : MonoBehaviour
     // Start is called before the first frame update
 
     public GameObject endingPortal;
+    public Animator fadeScreen;
     void Start()
     {
         if(keyHolder.keyFound[0] == true)
@@ -56,9 +58,13 @@ public class PlayerKeyReturn : MonoBehaviour
         }
         if (other.CompareTag("Enemy"))
         {
-            //play fade screen
-          //  transform.position = new Vector3(0f, 0f, 0f);
+            FadeScreenLoad();
         }
     }
-
+    public IEnumerator FadeScreenLoad()
+    {
+        fadeScreen.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(1.8f);
+        transform.position = new Vector3(0f, 0f, 0f);
+    }
 }
