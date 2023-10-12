@@ -58,13 +58,14 @@ public class PlayerKeyReturn : MonoBehaviour
         }
         if (other.CompareTag("Enemy"))
         {
-            FadeScreenLoad();
+            transform.position = new Vector3(0f, 0f, 0f);
         }
     }
-    public IEnumerator FadeScreenLoad()
+    /*public IEnumerator FadeScreenLoad()
     {
         fadeScreen.SetTrigger("FadeOut");
         yield return new WaitForSeconds(1.8f);
         transform.position = new Vector3(0f, 0f, 0f);
     }
+    */
 }
