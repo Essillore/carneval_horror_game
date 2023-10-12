@@ -26,8 +26,8 @@ public class KeyLocation : MonoBehaviour
     public void Start()
     {
         RandomizeFireKeyPosition();
-        Vector3 randomWaterPosition = new Vector3(Random.Range(67.924f, 125.4f), 2.11f, Random.Range(11.3f, 113.6f));
-        Vector3 randomSunPosition = new Vector3(Random.Range(-30.924f, -70.4f), 2.11f, Random.Range(30.3f, 40f));
+        RandomizeWaterKeyPosition();
+        RandomizeSunKeyPosition();
         RandomizeKey(0, randomFirePosition, keyObject[0]);
         RandomizeKey(1, randomWaterPosition, keyObject[1]);
         RandomizeKey(2, randomSunPosition, keyObject[2]);
@@ -151,36 +151,5 @@ public class KeyLocation : MonoBehaviour
         keyDict.Add(keyScript.ID, keyScript);
     }
 }
- /*public void RandomizeKeys()
- {
-     int keyRandomisedLocation = Random.Range(1, 4);
-
-     //Instantiate(keyObject, transform.position, transform.rotation);
-
-     if (keyRandomisedLocation == 1)
-     {
-         Vector3 mazeBuilding = new Vector3(-67.924f, 2.324f, -98.66f);
-         Instantiate(keyObject[0], mazeBuilding, transform.rotation);
-         Keys keyNumbering = GetComponent<Keys>();
-         keyNumbering.ID = 1;
-     }
-     //
-
-     if (keyRandomisedLocation == 2)
-     {
-         Vector3 mazeTent = new Vector3(-114.7f, 2.11f, -11.3f);
-         Instantiate(keyObject[0], mazeTent, transform.rotation);
-         Keys keyNumbering = GetComponent<Keys>();
-         keyNumbering.ID = 1;
-     }
-     if (keyRandomisedLocation == 3)
-     {
-         Vector3 mazeGreenhouse = new Vector3(-125.4f, 2.11f, -113.6f);
-         Instantiate(keyObject[0], mazeGreenhouse, transform.rotation);
-         Keys keyNumbering = GetComponent<Keys>();
-         keyNumbering.ID = 1;
-     }  
- }
- */
 
 
