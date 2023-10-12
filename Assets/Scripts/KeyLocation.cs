@@ -13,22 +13,20 @@ public class KeyBoolPairs
 
 public class KeyLocation : MonoBehaviour
 {
-    //public bool key1Found = false;
-    //public bool key2Found = false; 
-    //public bool key3Found = false;
-
-    public Dictionary<int, Keys> keyDict = new Dictionary<int, Keys>(); 
+    public Dictionary<int, Keys> keyDict = new Dictionary<int, Keys>();
 
     public GameObject[] keyObject;
     public bool[] keyFound;
+    public CanvasVisibilityController[] canvasController; // Reference to the CanvasVisibilityController script attached to this GameObject
+
 
     public int ID;
 
     public void Start()
     {
         Vector3 randomFirePosition = new Vector3(Random.Range(-67.924f, -125.4f), 2.11f, Random.Range(-11.3f, -113.6f));
-        Vector3 randomWaterPosition = new Vector3(Random.Range(-67.924f, -125.4f), 2.11f, Random.Range(-11.3f, -113.6f));
-        Vector3 randomSunPosition = new Vector3(Random.Range(-67.924f, -125.4f), 2.11f, Random.Range(-11.3f, -113.6f));
+        Vector3 randomWaterPosition = new Vector3(Random.Range(67.924f, 125.4f), 2.11f, Random.Range(11.3f, 113.6f));
+        Vector3 randomSunPosition = new Vector3(Random.Range(-30.924f, -70.4f), 2.11f, Random.Range(30.3f, 40f));
         RandomizeKey(0, randomFirePosition, keyObject[0]);
         RandomizeKey(1, randomWaterPosition, keyObject[1]);
         RandomizeKey(2, randomSunPosition, keyObject[2]);
@@ -54,20 +52,22 @@ public class KeyLocation : MonoBehaviour
     {
         if (keyDict.ContainsKey(numberofKey.ID))
         {
-         keyDict[numberofKey.ID].found = true;
-         Debug.Log("Key " + numberofKey.ID + " found!");
+            keyDict[numberofKey.ID].found = true;
+            Debug.Log("Key " + numberofKey.ID + " found!");
             keyFound[ID] = true;
+            // Set the canvas image to visible when a key is found
+            canvasController[ID].ToggleImageVisibility();
         }
     }
 
- public void RandomizeKey(int id, Vector3 position, GameObject key)
- {
-     GameObject keyInstance = Instantiate(keyObject[id], position, transform.rotation);
-     Keys keyScript = keyInstance.GetComponent<Keys>();
-     keyScript.ID = id;
-     keyDict.Add(keyScript.ID, keyScript);
- }
-
+    public void RandomizeKey(int id, Vector3 position, GameObject key)
+    {
+        GameObject keyInstance = Instantiate(keyObject[id], position, transform.rotation);
+        Keys keyScript = keyInstance.GetComponent<Keys>();
+        keyScript.ID = id;
+        keyDict.Add(keyScript.ID, keyScript);
+    }
+}
  /*public void RandomizeKeys()
  {
      int keyRandomisedLocation = Random.Range(1, 4);
@@ -100,4 +100,4 @@ public class KeyLocation : MonoBehaviour
  }
  */
 
-}
+
