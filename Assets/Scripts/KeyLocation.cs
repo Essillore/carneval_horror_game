@@ -16,11 +16,7 @@ public class KeyLocation : MonoBehaviour
     public bool key2Found = false; 
     public bool key3Found = false;
 
-    //keyclass
-    //location
-    public int keyID;
-
-    public Dictionary<int, keys> keyDict = new Dictionary<int, keys>(); 
+    public Dictionary<int, Keys> keyDict = new Dictionary<int, Keys>(); 
 
     public GameObject keyObject;
 
@@ -45,7 +41,7 @@ public class KeyLocation : MonoBehaviour
   
     }
 
-    public void KeyFound (keys numberofKey)
+    public void KeyFound (Keys numberofKey)
     {
 
         if(keyDict.ContainsKey(numberofKey.ID))
