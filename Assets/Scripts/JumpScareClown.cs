@@ -14,7 +14,6 @@ public class JumpScareClown : MonoBehaviour
     public float interval3 = 80f;
     public float interval4 = 100f;
     public float interval5 = 120f;
-    public AudioSource laugh;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,13 +62,12 @@ public class JumpScareClown : MonoBehaviour
     public void Scare()
     {
         //   player.GetPlayerPosition();
-        transform.position = player.transform.position + player.transform.forward * 0.5f;
+        transform.position = player.transform.position + player.transform.forward * 5f;
         Vector3 playerRotation = player.transform.rotation.eulerAngles;
         Vector3 tempRotation = new Vector3(0, 180f, 0f);
         Quaternion clownRotation = Quaternion.Euler(playerRotation.x + tempRotation.x, playerRotation.y + tempRotation.y, playerRotation.z + tempRotation.z);
         transform.rotation = clownRotation;
         transform.LookAt(player.transform.position, Vector3.up);
-        laugh.Play();
 
         StartCoroutine(ScareEffects());
 
