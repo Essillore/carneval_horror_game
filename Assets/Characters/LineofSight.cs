@@ -6,17 +6,17 @@ using UnityEngine.AI;
 public class LineofSight : MonoBehaviour
 
 {
-    public Transform player; // Reference to the player's transform.
+    public Transform player; 
     public float detectionRange = 100f;
-    private NavMeshAgent agent;
+    //private NavMeshAgent agent;
     public LayerMask obstacleLayer; // Layer mask for objects that block LOS.
 
     private bool playerInLOS = false;
 
     private void Start()
     {
-        player = GameObject.Find("Player").transform; // Replace "Player" with the name of your player GameObject.
-        agent = GetComponent<NavMeshAgent>();
+        player = GameObject.Find("FirstPersonController").transform; // Replace "Player" with the name of your player GameObject.
+        //agent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
@@ -64,9 +64,9 @@ public class LineofSight : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, rotationAngle, 0);
 
                 // Set the destination of the NavMeshAgent to the player's position.
-                agent.SetDestination(player.position);
+                //agent.SetDestination(player.position);
 
-                // Now you can use the 'playerInLOS' variable to determine if the player is in the enemy's line of sight.
+                
             }
         }
 
