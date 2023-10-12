@@ -6,10 +6,12 @@ public class Keys : MonoBehaviour
 {
     public int ID;
     public bool found;
+
     // Start is called before the first frame update
+
     void Start()
     {
-        
+        ID = 1;
     }
 
     // Update is called once per frame
@@ -17,4 +19,13 @@ public class Keys : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            KeyLocation.KeyFound(ID);
+        }
+    }
+
 }
