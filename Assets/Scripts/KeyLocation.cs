@@ -12,18 +12,19 @@ public class KeyBoolPairs
 
 public class KeyLocation : MonoBehaviour
 {
-    public bool key1Found = false;
-    public bool key2Found = false; 
-    public bool key3Found = false;
+    //public bool key1Found = false;
+    //public bool key2Found = false; 
+    //public bool key3Found = false;
 
     public Dictionary<int, Keys> keyDict = new Dictionary<int, Keys>(); 
 
-    public GameObject keyObject;
+    public GameObject[] keyObject;
 
     public int ID;
 
     public void Start()
     {
+
         RandomizeKeys();
     }
 
@@ -32,7 +33,19 @@ public class KeyLocation : MonoBehaviour
         throw new System.NotImplementedException();
     }
 
+
     public void RandomizeKeys()
+    {
+        int keyRandomisedLocation = Random.Range(0, keyObject.Length);
+
+        Vector3 randomPosition = new Vector3(Random.Range(-67.924f, -125.4f), 2.11f, Random.Range(-11.3f, -113.6f));
+        GameObject keyInstance = Instantiate(keyObject[keyRandomisedLocation], randomPosition, transform.rotation);
+        Keys keyScript = keyInstance.GetComponent<Keys>();
+        keyScript.ID = keyRandomisedLocation + 1; // ID should start from 1, not 0.
+        keyDict.Add(keyScript.ID, keyScript);
+    }
+
+    /*public void RandomizeKeys()
     {
         int keyRandomisedLocation = Random.Range(1, 4);
 
@@ -40,25 +53,31 @@ public class KeyLocation : MonoBehaviour
 
         if (keyRandomisedLocation == 1)
         {
-        Vector3 mazeBuilding = new Vector3(-67.924f, 2.324f, -98.66f);
-        Instantiate(keyObject, mazeBuilding, transform.rotation);
-
+            Vector3 mazeBuilding = new Vector3(-67.924f, 2.324f, -98.66f);
+            Instantiate(keyObject[0], mazeBuilding, transform.rotation);
+            Keys keyNumbering = GetComponent<Keys>();
+            keyNumbering.ID = 1;
         }
         //
         
         if (keyRandomisedLocation == 2)
         {
             Vector3 mazeTent = new Vector3(-114.7f, 2.11f, -11.3f);
-            Instantiate(keyObject, mazeTent, transform.rotation);
+            Instantiate(keyObject[0], mazeTent, transform.rotation);
+            Keys keyNumbering = GetComponent<Keys>();
+            keyNumbering.ID = 1;
         }
         if (keyRandomisedLocation == 3)
         {
             Vector3 mazeGreenhouse = new Vector3(-125.4f, 2.11f, -113.6f);
-            Instantiate(keyObject, mazeGreenhouse, transform.rotation);
+            Instantiate(keyObject[0], mazeGreenhouse, transform.rotation);
+            Keys keyNumbering = GetComponent<Keys>();
+            keyNumbering.ID = 1;
         }  
     }
+    */
 
-    public void KeyFound (Keys numberofKey)
+    /*public void KeyFound (Keys numberofKey)
     {
 
         if(keyDict.ContainsKey(numberofKey.ID))
@@ -68,6 +87,15 @@ public class KeyLocation : MonoBehaviour
         else
         {
             keyDict.Add(numberofKey.ID, numberofKey);
+        }
+    }
+    */
+    public void KeyFound(Keys numberofKey)
+    {
+        if (keyDict.ContainsKey(numberofKey.ID))
+        {
+            keyDict[numberofKey.ID].found = true;
+            Debug.Log("Key " + numberofKey.ID + " found!");
         }
     }
 }
