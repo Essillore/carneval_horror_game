@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 036bb809186fdc3449c304eac19edf21, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.9674788
+      value: 75.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 036bb809186fdc3449c304eac19edf21, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,23 +18,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 036bb809186fdc3449c304eac19edf21, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.552635
+      value: 126.8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 036bb809186fdc3449c304eac19edf21, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.45916042
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 036bb809186fdc3449c304eac19edf21, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 036bb809186fdc3449c304eac19edf21, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.88835335
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 036bb809186fdc3449c304eac19edf21, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 036bb809186fdc3449c304eac19edf21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -42,15 +42,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 036bb809186fdc3449c304eac19edf21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -125.334
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 036bb809186fdc3449c304eac19edf21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 329111104556720423, guid: 036bb809186fdc3449c304eac19edf21, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 036bb809186fdc3449c304eac19edf21, type: 3}
       propertyPath: m_Name
       value: Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 036bb809186fdc3449c304eac19edf21, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

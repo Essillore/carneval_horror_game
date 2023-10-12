@@ -5,15 +5,11 @@ using UnityEngine.UI;
 
 public class CanvasVisibilityController : MonoBehaviour
 {
-    public List<CanvasVisibilityController> canvasControllers = new List<CanvasVisibilityController>();
-    public Image image;
+    public Image image; // Reference to the Image component you want to control
+    public bool isVisible = false; // Control the visibility of the image
 
     public void ToggleImageVisibility()
     {
-        foreach (CanvasVisibilityController controller in canvasControllers)
-        {
-            Image image = controller.image;
-            image.enabled = !image.enabled; // Toggle visibility
-        }
+        image.enabled = isVisible;
     }
 }

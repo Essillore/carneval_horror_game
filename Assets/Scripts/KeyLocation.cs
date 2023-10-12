@@ -16,7 +16,10 @@ public class KeyLocation : MonoBehaviour
 
     public GameObject[] keyObject;
     public bool[] keyFound;
-    public CanvasVisibilityController[] canvasController; // Reference to the CanvasVisibilityController script attached to this GameObject
+    public CanvasVisibilityController canvasController; // Reference to the CanvasVisibilityController script attached to this GameObject
+    public CanvasVisibilityController waterCanvasController;
+    public CanvasVisibilityController sunCanvasController;
+
 
     public int ID;
     public Vector3 randomFirePosition;
@@ -33,6 +36,8 @@ public class KeyLocation : MonoBehaviour
         RandomizeKey(2, randomSunPosition, keyObject[2]);
 
     }
+
+
 
     public Vector3 RandomizeFireKeyPosition()
     {
@@ -138,9 +143,26 @@ public class KeyLocation : MonoBehaviour
             keyDict[numberofKey.ID].found = true;
             Debug.Log("Key " + numberofKey.ID + " found!");
             keyFound[ID] = true;
+            // Add a debug log to check if this part is reached
+            Debug.Log("Canvas visibility should be toggled");
             // Set the canvas image to visible when a key is found
-            canvasController[ID].ToggleImageVisibility();
-        }
+            if (numberofKey.ID == 0)
+            {
+                canvasController.isVisible = true;
+                canvasController.ToggleImageVisibility();
+            }
+            if (numberofKey.ID == 1)
+            {
+                waterCanvasController.isVisible = true;
+                waterCanvasController.ToggleImageVisibility();
+            }
+            if (numberofKey.ID == 2)
+            {
+                sunCanvasController.isVisible = true;
+                sunCanvasController.ToggleImageVisibility();          
+            }
+          
+        }  
     }
 
     public void RandomizeKey(int id, Vector3 position, GameObject key)
@@ -150,6 +172,8 @@ public class KeyLocation : MonoBehaviour
         keyScript.ID = id;
         keyDict.Add(keyScript.ID, keyScript);
     }
+
+
 }
 
 

@@ -26,11 +26,6 @@ public class Keys : MonoBehaviour
         {
             KeyLocation keyLocation = GameObject.FindObjectOfType<KeyLocation>();
             keyLocation.KeyFound(this);
-            //KeyLocation.KeyFound(ID);
-        }
-        else
-        {
-            transform.position = (transform.position + new Vector3(0.5f, 0f, 0.5f));
         }
     }  
 }
