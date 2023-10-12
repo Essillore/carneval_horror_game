@@ -4128,6 +4128,7 @@ MonoBehaviour:
   interval3: 80
   interval4: 100
   interval5: 120
+  laugh: {fileID: 0}
 --- !u!1 &2089729192
 GameObject:
   m_ObjectHideFlags: 0
